@@ -737,6 +737,11 @@
     document.getElementById('drawer').classList.remove('open');
     document.getElementById('drawerOverlay').classList.remove('open');
   }
+  // 确保每次打开页面都从顶部开始
+  window.addEventListener('pageshow', function() {
+    if (!window.location.hash) { window.scrollTo(0, 0); }
+  });
+  history.scrollRestoration = 'manual';
 </script>
 
 </body>
